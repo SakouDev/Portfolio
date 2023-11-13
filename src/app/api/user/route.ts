@@ -8,7 +8,6 @@ export const POST = async (req: NextRequest) => {
     let res;
     const data = await req.json()
 
-
     await User.create(data)
         .then(() => {
             res = { message: 'Created' }
@@ -21,6 +20,16 @@ export const POST = async (req: NextRequest) => {
 }
 
 export const GET = async () => {
-    return NextResponse.json({ message: 'GET haha' })
+    let res;
+
+    await User.find({})
+        .then((users) => {
+            res = { message: "Users found.", data: users }
+        })
+        .catch((error) => {
+            res = { message: "Users not found.", data: error }
+        })
+
+    return NextResponse.json(res)
 }
 

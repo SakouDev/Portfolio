@@ -3,11 +3,11 @@ import React from 'react'
 
 export default function Footer() {
 	return (
-		<footer className="w-full flex items-center justify-center py-3">
+		<footer className="w-full flex items-center justify-center py-3 cursor-default">
 			<span className="text-default-600">Vigneron</span>
 			<Link
 				isExternal
-				className="flex items-center gap-1 text-current"
+				className="flex items-center gap-1 text-current cursor-default"
 				href="/admin"
 				title="Admin"
 			>

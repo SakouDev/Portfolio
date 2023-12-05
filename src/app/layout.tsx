@@ -6,6 +6,7 @@ import { Providers } from "./providers";
 import { Navbar } from "@/src/components/navbar";
 import clsx from "clsx";
 import Footer from "../components/footer";
+import { ToastContainer } from 'react-toastify';
 
 export const metadata: Metadata = {
 	title: {
@@ -41,7 +42,10 @@ export default function RootLayout({
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
 					<div className="relative flex flex-col h-screen">
 						<Navbar />
-						{children}
+						<main className="container mx-auto max-w-7xl flex-grow">
+							{children}
+							<ToastContainer/>
+						</main>
 						<Footer />
 					</div>
 				</Providers>

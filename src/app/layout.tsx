@@ -6,6 +6,7 @@ import { Providers } from "./providers";
 import { Navbar } from "@/src/components/navbar";
 import clsx from "clsx";
 import Footer from "../components/footer";
+import { ToastContainer } from 'react-toastify';
 
 export const metadata: Metadata = {
 	title: {
@@ -22,6 +23,13 @@ export const metadata: Metadata = {
 		shortcut: "/favicon-16x16.png",
 		apple: "/apple-touch-icon.png",
 	},
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index : true,
+		}
+	}
 };
 
 export default function RootLayout({
@@ -31,7 +39,9 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<head />
+			<head>
+				<meta name="robots" content="index, follow" />
+			</head>
 			<body
 				className={clsx(
 					"min-h-screen bg-background font-sans antialiased",
@@ -41,7 +51,10 @@ export default function RootLayout({
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
 					<div className="relative flex flex-col h-screen">
 						<Navbar />
-						{children}
+						<main className="container mx-auto max-w-7xl flex-grow">
+							{children}
+							<ToastContainer/>
+						</main>
 						<Footer />
 					</div>
 				</Providers>

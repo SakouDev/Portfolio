@@ -5,8 +5,8 @@ import MapValoImg from '../src/app/img/MapValoRandomizerImage.png'
 import TeamValoImg from '../src/app/img/TeamValoRandom.png'
 import MemeLoverImg from '../src/app/img/MemeLoverImg.png'
 import MeteoAppImg from '../src/app/img/MeteoCDAImg.png'
-import CreditCardFlipImg from '../src/app/img/CreditCardFlipImg.png'
-import FirstCVImg from '../src/app/img/FirstCVImg.png'
+import BattleShip from '../src/app/img/BattleShip.png'
+import CoiffeurOnePage from '../src/app/img/CoiffeurOnePage.png'
 
 
 export type SiteConfig = typeof siteConfig;
@@ -94,40 +94,46 @@ export const siteConfig = {
 	],
 	projects : [
 		{
-			name : "Premier CV",
-			image : FirstCVImg,
-			linkDemo : "https://vigneronluc.netlify.app",
-			linkCode : "https://github.com/SakouDev/CV-Simplon",
-		},
-		{
-			name : "Credit Card Flip",
-			image : CreditCardFlipImg,
-			linkDemo : "https://lv-creditcard.netlify.app",
-			linkCode : "https://github.com/SakouDev/CreditCard-JS",
+			name : "BattleShip",
+			image : BattleShip,
+			date : "2021",
+			linkDemo : "http://battleship.vigneronluc.com/",
+			linkCode : "https://github.com/SakouDev/BattleShip",
 		},
 		{
 			name : "Meteo App",
 			image : MeteoAppImg,
+			date : "2022",
 			linkDemo : false,
 			linkCode : "https://github.com/SakouDev/MeteoCDA",
 		},
 		{
 			name : "Meme Lover",
 			image : MemeLoverImg,
+			date : "2023",
 			linkDemo : false,
 			linkCode : "https://github.com/SakouDev/MemeLover",
 		},
 		{
 			name : "Valorant Team Randomizer",
 			image : TeamValoImg,
+			date : "2024",
 			linkDemo : "https://valorant-team-randomizer.vercel.app",
 			linkCode : "https://github.com/SakouDev/ValorantTeamRandomizer",
 		},
 		{
 			name : "Valorant Map Randomizer",
 			image : MapValoImg,
+			date : "2024",
 			linkDemo : "https://valorant-map-randomizer.netlify.app",
 			linkCode : "https://github.com/SakouDev/MapValorantRandomizer",
+		},
+		{
+			name : "Coiffeur One Page",
+			image : CoiffeurOnePage,
+			date : "2025",
+			linkDemo : "https://coiffeur.vigneronluc.com/",
+			linkCode : "https://github.com/SakouDev/Coiffeur-One-Page",
 		},
 	]
 };

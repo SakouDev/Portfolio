@@ -1,46 +1,77 @@
-import { Card, CardBody, CardHeader } from '@nextui-org/card'
-import { Avatar } from '@nextui-org/avatar'
-import React from 'react'
+"use client";
+import { Card, CardBody } from "@nextui-org/card";
+import { Avatar } from "@nextui-org/avatar";
+import React, { useLayoutEffect } from "react";
+import { gsap, Power3 } from "gsap";
 
-export default function page() {
+export default function Page() {
+  let tl = gsap.timeline();
+  useLayoutEffect(() => {
+    tl.from(".animateMenu", {
+      duration: 0.75,
+      autoAlpha: 0,
+      ease: Power3.easeOut,
+      stagger: {
+        each: 0.75,
+        amount: 0.5,
+      },
+    }, "+=0.25");
+  }, [tl]);
   return (
-    <section className='h-full flex flex-col items-center lg:flex-row gap-5'>
-      <div className='px-12 lg:px-0 h-full w-full '>
-        <h1 className="text-center my-10 text-4xl underline decoration-purple-500">A propos</h1>
-        <div className='flex flex-col lg:flex-row items-center justify-center gap-6'>
-          <Card className='p-5 lg:w-4/5 '>
-            <CardBody className='gap-5'>
-              <div className='md:flex gap-5 items-center'>
-                <Avatar className='w-full mb-3 md:my-0 md:basis-2/6 lg:basis-1/6 h-fit' isBordered radius="sm" src="https://media.licdn.com/dms/image/D4E03AQH9vO1_KbpiNA/profile-displayphoto-shrink_800_800/0/1673440011073?e=1707350400&v=beta&t=yifX_3qTUg66NERLY6_ghbLvy7_myu3clte1pbOYmpY" />
-                <div className='basis-5/6 flex flex-col gap-5'>
-                  <p className='text-2xl'>
-                    Bonjour ! Je m&apos;appelle Luc Vigneron, concepteur développeur d&apos;application junior.
+    <section className="h-full flex flex-col items-center lg:flex-row gap-5">
+      <div className="px-12 lg:px-0 h-full w-full ">
+        <h1 className="text-center my-10 text-4xl underline decoration-purple-500">
+          À propos
+        </h1>
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-6">
+          <Card className="p-5 lg:w-4/5 animateMenu">
+            <CardBody className="gap-5">
+              <div className="md:flex gap-5 items-center">
+                <Avatar
+                  className="w-full mb-3 md:my-0 md:basis-1/6 h-fit"
+                  isBordered
+                  radius="sm"
+                  src="/Selfie.png"
+                />
+                <div className="basis-5/6 flex flex-col gap-5">
+                  <p className="text-2xl font-semibold">
+                    Bonjour ! Je m&apos;appelle Luc Vigneron, concepteur développeur
+                    d&apos;applications.
                   </p>
-                  <p className='text-xl'>
-                    Comme vous avez pu le lire je suis passionné par l&apos;informatique dans son ensemble
-                    depuis mon plus jeune âge et c&apos;est justement à cet âge que je suis tombé amoureux du metier de developpeur.
+                  <p className="text-xl">
+                    Passionné d&apos;informatique depuis mon plus jeune âge, j&apos;ai
+                    toujours su que je voulais en faire mon métier. C&apos;est en
+                    découvrant le développement que je suis tombé amoureux de
+                    cette discipline.
                   </p>
                 </div>
               </div>
-              <p className='text-xl'>
-                Je n&apos;ai jamais eu d&apos;autres options dans ma vie pour ce qui est de mon plan professionnel. Je suis parti dans le seul
-                BAC qui était à ma disposition pour être au plus proche de l&apos;informatique, puis dans un BTS qui pour le coup était réellement
-                dans le developpement informatique. J&apos;y ai alors découvert le web et su directement que je souhaitais
-                en faire mon avenir !
+
+              <p className="text-xl">
+                J&apos;ai suivi un parcours scolaire orienté vers l&apos;informatique,
+                d&apos;abord avec un BAC adapté, puis un BTS spécialisé en
+                développement. C&apos;est à ce moment que j&apos;ai découvert le web et
+                décidé d&apos;en faire mon avenir professionnel.
               </p>
-              <p className='text-xl'>
-                J&apos;ai passé ces 2 dernières années à me former avec SIMPLON.CO ainsi les entreprises qui ont accepté de me
-                donner leurs confiance pour devenir un développeur web éfficace et autonome. Pendant mon apprentissage je me suis aussi découvert une affinité avec la Stack &quot;MERN&quot; bien que
-                ma formation reposait en SQL niveau base de données.
+
+              <p className="text-xl">
+                Durant les deux dernières années, j&apos;ai suivi une formation avec{" "}
+                <b>SIMPLON.CO</b> et travaillé avec des entreprises qui m&apos;ont
+                fait confiance pour devenir un développeur web efficace et
+                autonome. J&apos;ai également découvert une affinité avec la stack{" "}
+                <b>MERN</b>, tout en consolidant mes compétences en <b>SQL</b>{" "}
+                pour la gestion de bases de données.
               </p>
-              <p className='text-xl'>
-                Aujourd&apos;hui je suis à la recherche de nouvelle aventure équipé de mon sac à dos pleins d&apos;idées pour m&apos;épanouir dans ce métier
-                qui me plait tant.
+
+              <p className="text-xl">
+                Aujourd&apos;hui, je suis à la recherche de nouvelles opportunités
+                pour mettre à profit ma passion du développement et contribuer à
+                des projets ambitieux.
               </p>
             </CardBody>
           </Card>
         </div>
       </div>
     </section>
-  )
+  );
 }

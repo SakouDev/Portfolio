@@ -5,8 +5,6 @@ import { MailIcon, UserIcon } from '@/src/components/icons'
 import { Resend } from 'resend';
 import * as dotenv from 'dotenv'
 import { redirect, useRouter } from 'next/navigation'
-import { NextResponse } from 'next/server';
-import { headers } from "next/dist/client/components/headers";
 
 dotenv.config()
 
@@ -46,8 +44,8 @@ export default function Contact() {
                 <h2 className='w-full text-center my-10 text-4xl underline decoration-purple-500'>Contact</h2>
                 <div className='h-5/6 flex justify-center items-center'>
 
-                    <div className='h-4/5 w-full flex flex-row flex-wrap justify-around gap-5'>
-                        <Card className='basis-6/7 md:basis-2/3 animateMenu' radius="lg">
+                    <div className='h-full w-full flex flex-row flex-wrap justify-around gap-5'>
+                        <Card className='basis-6/7 md:basis-2/3' radius="lg">
                             <CardHeader>
                             </CardHeader>
                             <CardBody className='flex items-center'>
